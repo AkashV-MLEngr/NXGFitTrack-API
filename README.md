@@ -162,3 +162,22 @@ Below is the full list of endpoints based entirely on the project code.
 - **DELETE /history/all**  
   Delete all history for current user  
   **Returns:** `{ deleted_count }`
+
+---
+## 🧪 Testing (Optional)
+
+- Use `pytest`
+
+---
+
+## 📦 Deployment (Production)
+
+Run the app with:
+```bash
+uvicorn app.main:app --host 0.0.0.0 --port 8000
+```
+
+Recommended reverse proxies:  
+- Nginx  
+- Caddy  
+- Docker
