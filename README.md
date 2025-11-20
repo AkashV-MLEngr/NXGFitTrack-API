@@ -170,13 +170,38 @@ Below is the full list of endpoints based entirely on the project code.
 
 ---
 
-## 📦 Deployment (Production)
+## 🚀 Deployment on Render
 
-Run the app with:
-```bash
-uvicorn app.main:app --host 0.0.0.0 --port 8000
-```
+### Step-by-step Deployment Guide
 
-Recommended reverse proxies:  
-- Nginx
-- Render
+1. **Push your code to GitHub**  
+   Ensure your code repository is pushed to GitHub or your preferred Git hosting platform.
+
+2. **Create a new Web Service on Render**  
+   - Log in to your Render account and create a new Web Service
+   - Connect your GitHub repository
+
+3. **Configure Deployment Settings**  
+   - Set **Environment**: Python
+   - Set **Build Command**:  
+     ```
+     pip install -r requirements.txt
+     ```
+   - Set **Start Command**:  
+     ```
+     uvicorn app.main:app --host 0.0.0.0 --port 10000
+     ```
+
+4. **Add Environment Variables** in Render**  
+   - Navigate to your service's environment
+   - Add required environment variables (e.g., `DATABASE_URL`, `API_KEY`, etc.)
+
+5. **Connect Render PostgreSQL Database**  
+   - Create a PostgreSQL database on Render (if not already created)
+   - Connect this database to your web service by setting the `DATABASE_URL` env variable
+
+6. **Deploy**  
+   - Click deploy and wait for the build process to complete
+
+---
+
